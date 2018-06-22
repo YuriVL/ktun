@@ -38,16 +38,20 @@ add_action( 'after_setup_theme', function () {
         'footer-menu' => 'Область меню в подвале',
     ]);
 } );
-//mainslider
-add_image_size( 'main-slider-thumb', 1400, 600, true );
-
-
-add_filter( 'frontpage_template',  function ($template ) {
-    return is_home() ? '' : $template;
-} );
 
 add_action('init', 'register_post_types');
 
+add_action('admin_menu', function(){
+    add_menu_page( 'Дополнительные настройки главной страницы', 'Главная', 'manage_options', 'main-options', '', 'dashicons-menu',100 );
+} );
+//mainslider
+add_image_size( 'main-slider-thumb', 1400, 600, true );
+//mainslider
+add_image_size( 'main-feature-thumb', 295, 220, true );
+
+add_filter( 'frontpage_template',  function ($template) {
+    return is_home() ? '' : $template;
+} );
 /**
  * ----------------------------Functions------------------------------------------------------------
  */
@@ -66,29 +70,91 @@ function register_post_types(){
             'edit_item'          => 'Редактирование изображения', // для редактирования типа записи
             'new_item'           => 'Новое изображение', // текст новой записи
             'view_item'          => 'Смотреть изображения', // для просмотра записи этого типа.
-            'search_items'       => 'Искать изображения', // для поиска по этим типам записи
+            'search_items'       => 'Искать изображение', // для поиска по этим типам записи
             'not_found'          => 'Не найдено', // если в результате поиска ничего не было найдено
             'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
             'parent_item_colon'  => '', // для родителей (у древовидных типов)
-            'menu_name'          => 'Слайдер ', // название меню
+            'menu_name'          => 'Слайдер', // название меню
         ),
         'public'              => false,
-        'show_ui'             => true, // зависит от public
-        'menu_icon'           => 'dashicons-format-image',
-        'supports'            => array('title','editor', 'excerpt', 'thumbnail'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
-    ) );
+        'show_ui'             => true,
+        'show_in_menu'        =>'main-options',
+        'supports'            => array('title', 'excerpt', 'thumbnail'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+    ));
+
+    register_post_type('featured-services', array(
+        'label'  => null,
+        'labels' => array(
+            'name'               => 'Автосервис Ktuning', // основное название для типа записи
+            'singular_name'      => 'Добавить запись', // название для одной записи этого типа
+            'add_new'            => 'Добавить запись', // для добавления новой записи
+            'add_new_item'       => 'Добавление записи', // заголовка у вновь создаваемой записи в админ-панели.
+            'edit_item'          => 'Редактирование записи', // для редактирования типа записи
+            'new_item'           => 'Новое запись', // текст новой записи
+            'view_item'          => 'Смотреть записи', // для просмотра записи этого типа.
+            'search_items'       => 'Искать запись', // для поиска по этим типам записи
+            'not_found'          => 'Не найдено', // если в результате поиска ничего не было найдено
+            'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
+            'parent_item_colon'  => '', // для родителей (у древовидных типов)
+            'menu_name'          => 'Автосервис', // название меню
+        ),
+        'public'              => false,
+        'show_ui'             => true,
+        'show_in_menu'        =>'main-options',
+        'supports'            => array('title', 'editor', 'thumbnail'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+    ));
+
+    register_post_type('main-services', array(
+        'label'  => null,
+        'labels' => array(
+            'name'               => 'Услуги автосервиса', // основное название для типа записи
+            'singular_name'      => 'Добавить запись', // название для одной записи этого типа
+            'add_new'            => 'Добавить запись', // для добавления новой записи
+            'add_new_item'       => 'Добавление записи', // заголовка у вновь создаваемой записи в админ-панели.
+            'edit_item'          => 'Редактирование записи', // для редактирования типа записи
+            'new_item'           => 'Новое запись', // текст новой записи
+            'view_item'          => 'Смотреть записи', // для просмотра записи этого типа.
+            'search_items'       => 'Искать запись', // для поиска по этим типам записи
+            'not_found'          => 'Не найдено', // если в результате поиска ничего не было найдено
+            'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
+            'parent_item_colon'  => '', // для родителей (у древовидных типов)
+            'menu_name'          => 'Услуги', // название меню
+        ),
+        'public'              => false,
+        'show_ui'             => true,
+        'show_in_menu'        =>'main-options',
+        'supports'            => array('title', 'editor', 'excerpt', 'custom-fields'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+    ));
+    register_post_type('faq', array(
+        'label'  => null,
+        'labels' => array(
+            'name'               => 'Часто задаваемые вопросы', // основное название для типа записи
+            'singular_name'      => 'Добавить запись', // название для одной записи этого типа
+            'add_new'            => 'Добавить запись', // для добавления новой записи
+            'add_new_item'       => 'Добавление записи', // заголовка у вновь создаваемой записи в админ-панели.
+            'edit_item'          => 'Редактирование записи', // для редактирования типа записи
+            'new_item'           => 'Новое запись', // текст новой записи
+            'view_item'          => 'Смотреть записи', // для просмотра записи этого типа.
+            'search_items'       => 'Искать запись', // для поиска по этим типам записи
+            'not_found'          => 'Не найдено', // если в результате поиска ничего не было найдено
+            'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
+            'parent_item_colon'  => '', // для родителей (у древовидных типов)
+            'menu_name'          => 'ЧЗВ', // название меню
+        ),
+        'public'              => false,
+        'show_ui'             => true,
+        'show_in_menu'        =>'main-options',
+        'supports'            => array('title', 'editor'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+    ));
 }
 
-function getMainSlider()
-{
-    // параметры по умолчанию
+function getServices($number, $type){
     $args = array(
-        'numberposts' => 3,
+        'numberposts' => $number,
         'orderby' => 'date',
         'order' => 'DESC',
-        'post_type' => 'main-slider'
+        'post_type' => $type
     );
 
     return get_posts($args);
-
 }
