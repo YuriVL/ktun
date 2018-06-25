@@ -12,17 +12,17 @@ get_header(); ?>
 
         <!--Main Slider-->
         <section class="main-slider">
-            <?php get_template_part('template-parts/post/content', 'slider'); ?>
+            <?php get_template_part('template-parts/front/content', 'slider'); ?>
         </section>
 
         <!--Featured Services-->
         <section class="featured-services sec-pdd-80">
-            <?php get_template_part('template-parts/post/content', 'featured'); ?>
+            <?php get_template_part('template-parts/front/content', 'featured'); ?>
         </section>
 
         <!--Services Style Two-->
         <section class="services-style-two sec-pdd-bot-70">
-            <?php get_template_part('template-parts/post/content', 'services'); ?>
+            <?php get_template_part('template-parts/front/content', 'services'); ?>
         </section>
 
 
@@ -59,7 +59,7 @@ get_header(); ?>
                             </div>
                         </div>
                     </div>
-                    <?php get_template_part('template-parts/post/content', 'faq'); ?>
+                    <?php get_template_part('template-parts/front/content', 'faq'); ?>
                 </div>
             </div>
         </section>
@@ -319,118 +319,9 @@ get_header(); ?>
 
         <!--News Section-->
         <section class="news-section sec-pdd-bot-70">
-            <div class="auto-container">
-                <!--Section Title-->
-                <div class="sec-title">
-                    <h2>Последние работы</h2>
-                </div>
-                <div class="row clearfix">
-
-                    <!--News Style One-->
-                    <div class="news-style-one col-md-4 col-sm-6 col-xs-12">
-                        <div class="inner-box wow fadeInLeft" data-wow-delay="0ms" data-wow-duration="1500ms">
-                            <figure class="image-box">
-                                <a href="blog-single.html"><img src="<?php echo IMG_DIR ?>/resource/blog-image-1.jpg"
-                                                                alt="">
-                                </a>
-                            </figure>
-                            <div class="post-meta">
-                                <ul class="clearfix">
-                                    <li><span class="day">16</span>Июн-2018</li>
-                                    <li>
-                                        <div class="icon"><span class="fa fa-comment-o"></span>
-                                        </div>
-                                        7-комментариев
-                                    </li>
-                                    <li>
-                                        <div class="icon"><span class="fa fa-heart-o"></span>
-                                        </div>
-                                        40-Likes
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="lower-content">
-                                <h3><a href="blog-single.html">Замена люка Passat B6</a></h3>
-                                <div class="text">После 20(0) км/ч люк катапультировался, т.к. крепления были приклеены
-                                    на
-                                    (жевачку), которая засохла
-                                </div>
-                                <a href="portfolio.html" class="theme-btn btn-style-one">Подробнее </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--News Style One-->
-                    <div class="news-style-one col-md-4 col-sm-6 col-xs-12">
-                        <div class="inner-box wow fadeInRight itm-mgn-top-499" data-wow-delay="0ms"
-                             data-wow-duration="1500ms">
-                            <figure class="image-box">
-                                <a href="blog-single.html"><img src="<?php echo IMG_DIR ?>/resource/blog-image-2.jpg"
-                                                                alt="">
-                                </a>
-                            </figure>
-                            <div class="post-meta">
-                                <ul class="clearfix">
-                                    <li><span class="day">20</span>Jun-2016</li>
-                                    <li>
-                                        <div class="icon"><span class="fa fa-comment-o"></span>
-                                        </div>
-                                        5-Comments
-                                    </li>
-                                    <li>
-                                        <div class="icon"><span class="fa fa-heart-o"></span>
-                                        </div>
-                                        26-Likes
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="lower-content">
-                                <h3><a href="blog-single.html">Опель зафира 2</a></h3>
-                                <div class="text">Как замена ГРМ переходит в замену сопутствующих деталей. Демпферный
-                                    шкив
-                                    развалился на две части.
-                                </div>
-                                <a href="portfolio.html" class="theme-btn btn-style-one">Подробнее </a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!--News Style One-->
-                    <div class="news-style-one col-md-4 col-sm-6 col-xs-12">
-                        <div class="inner-box wow fadeInRight itm-mgn-top-499" data-wow-delay="0ms"
-                             data-wow-duration="1500ms">
-                            <figure class="image-box">
-                                <a href="blog-single.html"><img src="<?php echo IMG_DIR ?>/resource/blog-image-16.jpg"
-                                                                alt="">
-                                </a>
-                            </figure>
-                            <div class="post-meta">
-                                <ul class="clearfix">
-                                    <li><span class="day">20</span>Jun-2016</li>
-                                    <li>
-                                        <div class="icon"><span class="fa fa-comment-o"></span>
-                                        </div>
-                                        5-Comments
-                                    </li>
-                                    <li>
-                                        <div class="icon"><span class="fa fa-heart-o"></span>
-                                        </div>
-                                        26-Likes
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="lower-content">
-                                <h3><a href="blog-single.html">Полный ремонт суппотра</a></h3>
-                                <div class="text">Покраска с балончика(с практической целью). Есть нюансы во внешнем
-                                    виде.
-                                </div>
-                                <a href="portfolio.html" class="theme-btn btn-style-one">Подробнее </a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
+            <?php if (is_active_sidebar('main_posts')) : ?>
+                <?php dynamic_sidebar('main_posts'); ?>
+            <?php endif; ?>
         </section>
 
 

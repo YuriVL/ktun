@@ -1,7 +1,6 @@
 <?php
 /**
  * Displays header upper
- *
  */
 ?>
 
@@ -21,23 +20,22 @@
         <div class="upper-column info-box">
             <div class="icon-box"><span class="flaticon-clock"></span>
             </div>
-            Пон - Суб: 9:00 - 18:00pm
+            <?php echo get_theme_mod('work_time'); ?>
         </div>
 
         <!--Info Box-->
         <div class="upper-column info-box">
             <div class="icon-box"><span class="flaticon-location"></span>
             </div>
-            ул. Ровчакова, 10
-            <div class="light-text">Могилев</div>
+            <?php echo get_theme_mod('address'); ?>
         </div>
 
         <!--Info Box-->
         <div class="upper-column info-box">
             <div class="icon-box"><span class="flaticon-smartphone-call"></span>
             </div>
-            +(375) 298 48 98 74
-            <div class="light-text"><?php echo get_bloginfo('admin_email');?></div>
+            <?php echo get_theme_mod('phone'); ?>
+            <div class="light-text"> <?php echo get_theme_mod('mail'); ?></div>
         </div>
     </div>
 

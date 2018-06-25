@@ -13,18 +13,24 @@
                         <div class="footer-column col-md-6 col-sm-6 col-xs-12">
                             <div class="footer-widget about-widget">
                                 <div class="footer-logo">
-                                    <a href="index.html"><img src="<?php echo IMG_DIR ?>/logo.png" alt="">
+                                    <a href="<?php echo esc_url( home_url( '/' ) ); ?>">
+                                        <img src="<?php echo IMG_DIR ?>/logo.png" alt="<?php bloginfo( 'name' ); ?>">
                                     </a>
                                 </div>
                                 <div class="widget-content">
-                                    <div class="text"> Только качественный ремонт авто по доступным ценам.</div>
+                                    <div class="text"><?php echo get_theme_mod('footer_social'); ?></div>
                                     <ul class="contact-info">
-                                        <li><span class="icon flaticon-location"></span> ул. Ровчакова, 10,
-                                            Могилев,
-                                            РБ
+                                        <li>
+                                            <span class="icon flaticon-location"></span>
+                                            <?php echo get_theme_mod('address'); ?>
                                         </li>
-                                        <li><span class="icon flaticon-mail"></span> mail@ktuning.by</li>
-                                        <li><span class="icon flaticon-smartphone-call"></span> 8(029) 637-11-05
+                                        <li>
+                                            <span class="icon flaticon-mail"></span>
+                                            <?php echo get_theme_mod('mail'); ?>
+                                        </li>
+                                        <li>
+                                            <span class="icon flaticon-smartphone-call"></span>
+                                            <?php echo get_theme_mod('phone'); ?>
                                         </li>
                                     </ul>
                                 </div>
@@ -46,44 +52,9 @@
 
                         <!--Footer Column-->
                         <div class="footer-column col-md-6 col-sm-6 col-xs-12">
-                            <div class="footer-widget posts-widget">
-                                <h2>Recent Posts</h2>
-                                <div class="widget-content">
-                                    <!--Post-->
-                                    <div class="post">
-                                        <figure class="post-thumb">
-                                            <a href="#"><img
-                                                    src="<?php echo IMG_DIR ?>/resource/post-thumb-1.jpg"
-                                                    alt="">
-                                            </a>
-                                        </figure>
-                                        <h4><a href="#">Новость 1</a></h4>
-                                        <div class="time"><span class="fa fa-calendar"></span> Jun 12,2016</div>
-                                    </div>
-                                    <!--Post-->
-                                    <div class="post">
-                                        <figure class="post-thumb">
-                                            <a href="#"><img
-                                                    src="<?php echo IMG_DIR ?>/resource/post-thumb-2.jpg"
-                                                    alt="">
-                                            </a>
-                                        </figure>
-                                        <h4><a href="#">Новость 2</a></h4>
-                                        <div class="time"><span class="fa fa-calendar"></span> Jun 14,2016</div>
-                                    </div>
-                                    <!--Post-->
-                                    <div class="post">
-                                        <figure class="post-thumb">
-                                            <a href="#"><img
-                                                    src="<?php echo IMG_DIR ?>/resource/post-thumb-3.jpg"
-                                                    alt="">
-                                            </a>
-                                        </figure>
-                                        <h4><a href="#">Новость 3</a></h4>
-                                        <div class="time"><span class="fa fa-calendar"></span> Jun 17,2016</div>
-                                    </div>
-                                </div>
-                            </div>
+                            <?php if (is_active_sidebar('footer_posts')) : ?>
+                                <?php dynamic_sidebar('footer_posts'); ?>
+                            <?php endif; ?>
                         </div>
 
                         <!--Footer Column-->
@@ -108,19 +79,23 @@
 
                                     <div class="social-links">
                                         <ul class="clearfix">
-                                            <li><a href="#"><span class="icon fa fa-facebook-f"></span> Facebook</a>
+                                            <li>
+                                                <a href="<?php echo get_theme_mod('footer_facebook'); ?>" target="_blank"><span class="icon fa fa-facebook-f"></span> Facebook</a>
                                             </li>
-                                            <li><a href="#"><span class="icon fa fa-twitter"></span> Twitter</a>
+                                            <li>
+                                                <a href="<?php echo get_theme_mod('footer_instagram'); ?>" target="_blank"><span class="icon fa fa-instagram"></span> Instagram</a>
                                             </li>
-                                            <li><a href="#"><span class="icon fa fa-google-plus"></span> Goole
-                                                    plus</a>
+                                            <li>
+                                                <a href="<?php echo get_theme_mod('footer_viber'); ?>"><span class="icon fa fa-whatsapp"></span> Viber</a>
                                             </li>
-                                            <li><a href="#"><span class="icon fa fa-linkedin"></span>
-                                                    Linkedin</a>
+                                            <li>
+                                                <a href="<?php echo get_theme_mod('footer_skype'); ?>"><span class="icon fa fa-skype"></span> Skype</a>
                                             </li>
-                                            <li><a href="#"><span class="icon fa fa-skype"></span> skype</a>
+                                            <li>
+                                                <a href="<?php echo get_theme_mod('footer_vkontakte');?> target="_blank"><span class="icon icon fa fa-vk"></span> Vkontakte</a>
                                             </li>
-                                            <li><a href="#"><span class="icon fa fa-whatsapp"></span> viber</a>
+                                            <li>
+                                                <a href="<?php echo get_theme_mod('footer_ok'); ?>" target="_blank"><span class="icon fa fa-odnoklassniki"></span>Ok</a>                                            </li>
                                             </li>
                                         </ul>
                                     </div>
@@ -134,11 +109,10 @@
             </div>
         </div>
     </div>
-
     <!--Footer Bottom-->
     <div class="footer-bottom">
         <div class="auto-container">
-            <div class="text">Copyright &copy; Ktuning.by 2018</div>
+            <div class="text"><?php echo get_theme_mod('copyright').' '.date('Y'); ?></div>
         </div>
     </div>
 

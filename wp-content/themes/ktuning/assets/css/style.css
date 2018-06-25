@@ -2793,6 +2793,7 @@ ul,li{
 	margin-bottom: 25px;
 	position: relative;
 	font-size: 14px;
+	min-height: 92px;
 }
 
 /*** 
@@ -3389,10 +3390,10 @@ ul,li{
 	line-height:24px;
 	padding:10px 16px;
 	height:46px;
-	color:#f9f9f9;;
+	color:#232324;
 	font-size:13px;
 	border-radius:3px;
-	background-color: rgba(35, 35, 36, 0.9);
+	background-color: #f4f5f6;
 	-webkit-transition:all 300ms ease;
 	-ms-transition:all 300ms ease;
 	-o-transition:all 300ms ease;
@@ -3404,7 +3405,7 @@ ul,li{
 .main-footer .subscribe-widget .form-group input[type="tel"]:focus,
 .main-footer .subscribe-widget .form-group input[type="email"]:focus,
 .main-footer .subscribe-widget .form-group textarea:focus{
-	background:#f1f1f1;	
+	background:#f4f5f6;
 }
 
 .main-footer .subscribe-widget .form-group input[type="submit"],
@@ -4294,7 +4295,7 @@ ul,li{
 
 .sidebar .popular-posts .post-info{
 	font-size:13px;
-	color:#5a5a5a;	
+	color:#a83533;
 }
 
 .sidebar .popular-tags a{
@@ -4307,7 +4308,7 @@ ul,li{
 	border:1px solid #e0e0e0;
 	color:#000000;
 	text-align:center;
-	font-size:13px;
+	font-size:13px!important;
 	border-radius:2px;
 	transition:all 300ms ease;
 	-webkit-transition:all 300ms ease;
@@ -4768,12 +4769,44 @@ ul,li{
 
 .sidebar-page-container .comments-area .comment{
 	position:relative;
-	padding:0px 0px 0px 130px;
+	padding:0px 0px 0px 30px;
 	font-size:14px;
 }
+.sidebar-page-container .comments-area .comment .comment-author{
+	position: relative;
+	height: 2.7em;
+	margin-bottom: -40px;
+}
 
+.sidebar-page-container .comments-area .comment  .comment_text {
+	padding: 3.3em 1em 2em;
+	border-bottom: solid 1px #eee;
+	word-wrap: break-word;
+	color:#0f0f0f;
+}
+.sidebar-page-container .comments-area .comment  .comment_text .comment-meta,
+.sidebar-page-container .comments-area .comment  .comment_text .replay {
+	display: inline;
+}
+
+.sidebar-page-container .comments-area .comment .avatar {
+	position: absolute;
+	top: -15%;
+	left: 1em;
+	width: 2.8em;
+	background: #fff;
+	border-radius: 50%;
+	-webkit-box-shadow: 0 0 0 2px rgba(255,255,255,.5);
+	box-shadow: 0 0 0 2px rgba(255,255,255,.5);
+}
+.sidebar-page-container .comments-area .comment .comment_author {
+	position: absolute;
+	top: 17%;
+	left: 5em;
+	color: #444;
+}
 .sidebar-page-container .comments-area .reply-comment{
-	padding-left:130px;	
+	padding-left:330px;
 }
 
 .sidebar-page-container .comments-area .comment-box .author-thumb{
@@ -4900,7 +4933,7 @@ ul,li{
 	width:100%;
 	line-height:24px;
 	padding:9px 15px;
-	color:#f9f9f9;;
+	color: #232324;
 	border:1px solid #e0e0e0;
 	height:44px;
 	font-size:13px;
@@ -5074,6 +5107,14 @@ ul,li{
 	margin-bottom:20px;
 	line-height:2em;
 	color: #f9f9f9;
+}
+
+.content-section .text-block ul{
+	padding-left: 40px;
+}
+.content-section .text-block ul>li{
+	padding: 2px 0 2px 17px;
+	background: url(../images/icons/content_li.png) no-repeat 4px 7px;
 }
 
 .services-content .two-column{
@@ -6283,7 +6324,7 @@ ul,li{
 	width:100%;
 	line-height:22px;
 	padding:9px 15px;
-	color:#222222;
+	color:#232324;
 	border:1px solid #e0e0e0;
 	transition:all 300ms ease;
 	-webkit-transition:all 300ms ease;
@@ -6788,7 +6829,8 @@ ul,li{
 	position:relative;
 	display:block;
 	width:100%;
-	background-color: rgba(35, 35, 36, 0.9);
+	background-color: #f4f5f6;
+	color: #232324;
 	line-height:24px;
 	padding:9px 15px;
 	height:44px;
