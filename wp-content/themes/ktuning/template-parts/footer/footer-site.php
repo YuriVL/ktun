@@ -60,23 +60,8 @@
                         <!--Footer Column-->
                         <div class="footer-column col-md-6 col-sm-6 col-xs-12">
                             <div class="footer-widget subscribe-widget">
-                                <h2>SUBSCRIBE</h2>
+                                <h2>Мы в социальных сетях</h2>
                                 <div class="widget-content">
-
-                                    <div class="newsletter-form">
-                                        <form method="post" action="contact.html">
-                                            <div class="form-group">
-                                                <input type="email" name="email" value=""
-                                                       placeholder="Enter your Email" required>
-                                                <button type="submit" class="theme-btn"><span
-                                                        class="fa fa-paper-plane-o"></span>
-                                                </button>
-                                            </div>
-
-                                        </form>
-                                    </div>
-                                    <div class="text">Get latest news and updates</div>
-
                                     <div class="social-links">
                                         <ul class="clearfix">
                                             <li>

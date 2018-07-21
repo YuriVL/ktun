@@ -217,13 +217,27 @@ add_action('widgets_init', function () {
             'after_title' => '</h2></div>'
         )
     );
+    register_sidebar(
+        array(
+            'id' => 'gallery-section',
+            'name' => 'Галлерея главная страница',
+            'description' => 'Перетащите сюда виджеты, чтобы добавить их.',
+            'before_widget' => '<div id="%1$s" class="gallery-section full-width style-two padding-top-0 %2$s">',
+            'after_widget' => '</div>',
+            'before_title' => '<div class="auto-container"><div class="sec-title"><h2>',
+            'after_title' => '</h2></div></div>'
+        )
+    );
 });
 
 add_action('widgets_init', function () {
     register_widget('Ktuning_Widget_Recent_Posts');
     register_widget('Ktuning_Widget_Footer_Posts');
     register_widget('Ktuning_Widget_Main_Posts');
+    register_widget('Ktuning_Widget_Gallery_Posts');
 });
+//testimonial
+add_image_size('main-testimonial-thumb', 1920, 660, true);
 //mainslider
 add_image_size('main-slider-thumb', 1400, 600, true);
 //mainslider
@@ -298,7 +312,7 @@ function register_post_types()
         'supports' => array('title', 'editor', 'thumbnail'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
     ));
 
-    register_post_type('main-services', array(
+    register_post_type('services', array(
         'label' => null,
         'labels' => array(
             'name' => 'Услуги автосервиса', // основное название для типа записи
@@ -319,6 +333,7 @@ function register_post_types()
         'show_in_menu' => 'main-options',
         'supports' => array('title', 'editor', 'excerpt', 'custom-fields'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
     ));
+    //часто задаваемые вопросы
     register_post_type('faq', array(
         'label' => null,
         'labels' => array(
@@ -339,6 +354,49 @@ function register_post_types()
         'show_ui' => true,
         'show_in_menu' => 'main-options',
         'supports' => array('title', 'editor'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+    ));
+    register_post_type('parallax', array(
+        'label' => null,
+        'labels' => array(
+            'name' => 'Параллакс', // основное название для типа записи
+            'singular_name' => 'Добавить запись', // название для одной записи этого типа
+            'add_new' => 'Добавить запись', // для добавления новой записи
+            'add_new_item' => 'Добавление записи', // заголовка у вновь создаваемой записи в админ-панели.
+            'edit_item' => 'Редактирование записи', // для редактирования типа записи
+            'new_item' => 'Новое запись', // текст новой записи
+            'view_item' => 'Смотреть записи', // для просмотра записи этого типа.
+            'search_items' => 'Искать запись', // для поиска по этим типам записи
+            'not_found' => 'Не найдено', // если в результате поиска ничего не было найдено
+            'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
+            'parent_item_colon' => '', // для родителей (у древовидных типов)
+            'menu_name' => 'Параллакс', // название меню
+        ),
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => 'main-options',
+        'supports' => array('title', 'editor', 'thumbnail'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
+    ));
+
+    register_post_type('testimonial', array(
+        'label' => null,
+        'labels' => array(
+            'name' => 'Низ', // основное название для типа записи
+            'singular_name' => 'Добавить запись', // название для одной записи этого типа
+            'add_new' => 'Добавить запись', // для добавления новой записи
+            'add_new_item' => 'Добавление записи', // заголовка у вновь создаваемой записи в админ-панели.
+            'edit_item' => 'Редактирование записи', // для редактирования типа записи
+            'new_item' => 'Новое запись', // текст новой записи
+            'view_item' => 'Смотреть записи', // для просмотра записи этого типа.
+            'search_items' => 'Искать запись', // для поиска по этим типам записи
+            'not_found' => 'Не найдено', // если в результате поиска ничего не было найдено
+            'not_found_in_trash' => 'Не найдено в корзине', // если не было найдено в корзине
+            'parent_item_colon' => '', // для родителей (у древовидных типов)
+            'menu_name' => 'Низ', // название меню
+        ),
+        'public' => false,
+        'show_ui' => true,
+        'show_in_menu' => 'main-options',
+        'supports' => array('title', 'editor', 'thumbnail'), // 'title','editor','author','thumbnail','excerpt','trackbacks','custom-fields','comments','revisions','page-attributes','post-formats'
     ));
 }
 
@@ -367,7 +425,7 @@ function the_breadcrumb()
 {
     global $post;
     if (!is_home()) {
-        echo '<li><a href="' . site_url() . '">Главная</a></li>';
+        echo '<li><a href="' . site_url() . '">Главная&nbsp</a></li>';
         if (is_single()) { // записи
             $cat = get_the_category_list();
             echo "<li>$cat</li>";
@@ -423,7 +481,7 @@ function the_breadcrumb()
     } else { // главная
         $pageNum = (get_query_var('paged')) ? get_query_var('paged') : 1;
         if ($pageNum > 1)
-            echo '<li><a href="' . site_url() . '">Главная</a></li>' . $pageNum . '-я страница' . '</li>';
+            echo '<li><a href="' . site_url() . '">Главная&nbsp</a></li>' . $pageNum . '-я страница' . '</li>';
         else
             echo '<li>' . 'Вы находитесь на главной странице' . '</li>';
     }

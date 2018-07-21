@@ -3,8 +3,8 @@
  * Displays services
  */
 
-$obj = get_post_type_object('main-services');
-$servises = getServices(6, 'main-services');
+$obj = get_post_type_object('services');
+$servises = getServices(6, 'services');
 $h2 = $obj->label ?? '';
 ?>
 
@@ -18,6 +18,7 @@ $h2 = $obj->label ?? '';
         for ($i = 0; $i < 6; $i++) {
             $msI = $i + 1;
             $post = $servises[$i];
+            $fields = get_fields($post->ID);
             $ms = (in_array($i, [0, 3])) ? 0 : ($ms + 300);
             ?>
             <!--Service Block-->
@@ -28,7 +29,8 @@ $h2 = $obj->label ?? '';
                     </div>
                     <h4><?php echo $post->post_title ?></h4>
                     <div class="text"><?php echo $post->post_content ?></div>
-                    <div class="btn-box"><a href="service-single.html" class="theme-btn read-more">Подробнее </a>
+                    <div class="btn-box"><a href="<?php echo $fields['link']; ?>" class="theme-btn read-more">
+                            Подробнее </a>
                     </div>
                 </div>
             </div>

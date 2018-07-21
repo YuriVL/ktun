@@ -18,7 +18,7 @@ $i = 1;
     <div class="container-box anim-5-all">
         <?php
         foreach ($features as $feature) {
-            $class = ($i > 1) ? 'content-left' : '';
+            $class = ($i == 3 || $i == 4) ? 'content-left' : '';
             $image = get_the_post_thumbnail_url($feature->ID, 'main-feature-thumb');
             ?>
             <div class="col-lg-6 col-sm-6 single-what-we-do clearfix <?php echo $class ?>">
