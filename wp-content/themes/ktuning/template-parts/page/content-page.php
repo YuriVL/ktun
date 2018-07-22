@@ -18,9 +18,9 @@ $link = get_permalink($post->ID);
                         <h3><a href="<?php echo $link ?>"><?php the_title()?></a></h3>
                         <div class="post-meta">
                             <ul class="clearfix">
-                                <li><a href="#"><span class="icon fa fa-heart-o"></span> 40 отметок «Нравится»</a>
+                                <li><span class="icon fa fa-heart-o"></span> 40 отметок «Нравится»
                                 </li>
-                                <li><a href="#"><span class="icon fa fa-comment-o"></span> 22 Комментариев</a>
+                                <li><span class="icon fa fa-comment-o"></span><?php echo $post->comment_count?> Комментариев
                                 </li>
                             </ul>
                         </div>

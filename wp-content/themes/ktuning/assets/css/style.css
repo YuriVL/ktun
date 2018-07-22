@@ -5432,7 +5432,7 @@ ul,li{
 }
 
 /*.blog-section .month-block .default-blog-post:nth-child(2n+2){
-	margin-top:60px;	
+	margin-top:60px;
 }*/
 
 .default-blog-post{
@@ -5442,7 +5442,7 @@ ul,li{
 }
 
 .blog-section .month-block .row .default-blog-post{
-	padding:0px 50px;	
+	padding:0px 50px;
 }
 
 .default-blog-post .inner-box{
@@ -5454,7 +5454,7 @@ ul,li{
 	display:block;
 	padding:16px 0px;
 	border-bottom:1px solid #e0e0e0;
-	margin-bottom:20px;	
+	margin-bottom:20px;
 }
 
 .default-blog-post .post-info:after{
@@ -5463,7 +5463,7 @@ ul,li{
 	left:0px;
 	bottom:-1px;
 	width:30px;
-	border-bottom:1px solid #a83533;	
+	border-bottom:1px solid #a83533;
 }
 
 .default-blog-post .post-info h3{
@@ -5489,7 +5489,7 @@ ul,li{
 
 .default-blog-post .post-meta{
 	position:relative;
-	float:right;	
+	float:right;
 }
 
 .default-blog-post .post-meta li{
@@ -5502,24 +5502,24 @@ ul,li{
 .default-blog-post .post-meta li a{
 	color:#f9f9f9;;
 	display:block;
-	line-height:24px;	
+	line-height:24px;
 }
 
 .default-blog-post .post-meta li a:hover{
-	color:#a83533;	
+	color:#a83533;
 }
 
 .default-blog-post .post-meta li .icon{
 	font-size:14px;
 	color:#a83533;
 	line-height:24px;
-	padding-right:5px;	
+	padding-right:5px;
 }
 
 .default-blog-post .image-box{
 	position:relative;
 	display:block;
-	overflow:hidden;	
+	overflow:hidden;
 }
 
 .default-blog-post .image-box img{
@@ -5559,7 +5559,7 @@ ul,li{
 .default-blog-post .image-box .date .day{
 	display:block;
 	font-size:26px;
-	font-weight:500;	
+	font-weight:500;
 	color:#a83533;
 	margin-bottom:3px;
 }
@@ -5575,7 +5575,7 @@ ul,li{
 }
 
 .default-blog-post .inner-box .post-content{
-	position:relative;	
+	position:relative;
 }
 
 .default-blog-post .inner-box .post-content p{
@@ -6974,6 +6974,20 @@ ul,li{
 }
 .flexslider .slides img {
 	max-height: 480px;
+}
+/*Contact form 7 ovveride*/
+div.wpcf7-mail-sent-ok,
+div.wpcf7-mail-sent-ng,
+div.wpcf7-aborted ,
+div.wpcf7-spam-blocked,
+div.wpcf7-validation-errors,
+div.wpcf7-acceptance-missing {
+	border: none!important;
+	background: #a83533;
+}
+
+div.wpcf7-mail-sent-ok {
+	background: #398f14!important;
 }
 
 /* carhut HTML Template */

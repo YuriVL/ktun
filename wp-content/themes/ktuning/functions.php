@@ -236,6 +236,10 @@ add_action('widgets_init', function () {
     register_widget('Ktuning_Widget_Main_Posts');
     register_widget('Ktuning_Widget_Gallery_Posts');
 });
+//btn more
+add_action('wp_ajax_loadmore', 'true_load_posts');
+add_action('wp_ajax_nopriv_loadmore', 'true_load_posts');
+
 //testimonial
 add_image_size('main-testimonial-thumb', 1920, 660, true);
 //mainslider
@@ -672,4 +676,42 @@ function ktuning_comment($comment, $args, $depth)
     <?php if ('div' != $args['style']) { ?>
     </div>
 <?php }
+}
+
+function true_load_posts()
+{
+    $args = unserialize(stripslashes($_POST['query']));
+    $args['paged'] = $_POST['page'] + 1; // следующая страница
+    $args['post_status'] = 'publish';
+
+    // обычно лучше использовать WP_Query, но не здесь
+    query_posts($args);
+    // если посты есть
+    if (have_posts()) :
+        $i = 1;
+        /* Start the Loop */
+        while (have_posts()) : the_post();
+            if ($i == 1 || ($i % 3 == 0)) { ?>
+                <!--Month Block-->
+                <div class="month-block">
+                <div class="row clearfix">
+            <?php }
+
+            get_template_part('template-parts/page/content', 'page');
+
+            // If comments are open or we have at least one comment, load up the comment template.
+            if (comments_open() || get_comments_number()) :
+                comments_template();
+            endif;
+
+            if ($i % 2 == 0) { ?>
+                </div>
+                </div>
+                <!--Month Block-->
+                <?php
+            }
+            $i++;
+        endwhile; // End of the loop.
+    endif;
+    die();
 }

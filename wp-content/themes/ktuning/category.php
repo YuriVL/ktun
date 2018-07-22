@@ -18,10 +18,10 @@ get_header();
             <div class="auto-container">
                 <div class="outer-box">
                     <?php
+                    if (have_posts()) :
                     $i = 1;
                     /* Start the Loop */
-                    while (have_posts()) {
-                        the_post();
+                    while (have_posts()) : the_post();
                         if ($i == 1 || ($i % 3 == 0)) { ?>
                             <!--Month Block-->
                             <div class="month-block">
@@ -42,10 +42,25 @@ get_header();
                             <?php
                         }
                         $i++;
-                    } // End of the loop.
-                    ?>
-                </div>
-                <div class="btn-box text-center padd-top-20"><a href="index.html" class="theme-btn btn-style-two">Больше</a>
+                    endwhile; // End of the loop.
+
+                    global $wp_query;
+                    if ($wp_query->max_num_pages > 1) : ?>
+                    <script>
+                        var ajaxurl = '<?php echo site_url() ?>/wp-admin/admin-ajax.php';
+                        var true_posts = '<?php echo serialize($wp_query->query_vars); ?>';
+                        var current_page = <?php echo (get_query_var('paged')) ? get_query_var('paged') : 1; ?>;
+                        var max_pages = '<?php echo $wp_query->max_num_pages; ?>';
+                    </script>
+                    <div class="btn-box text-center padd-top-20"><a id="true_loadmore" href="#" class="theme-btn btn-style-two">Больше</a>
+                        <?php
+                        endif;
+                        else :
+                            get_template_part('template-parts/post/content', 'none');
+                        endif;
+
+                        ?>
+                    </div>
                 </div>
             </div>
         </section>

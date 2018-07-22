@@ -57,14 +57,31 @@ get_header(); ?>
                                 <h3><?php the_title(); ?></h3>
                             </div>
                             <div class="text-block">
-                                <?php the_content(); ?>
+                                <?php
+                                $content = apply_filters('the_content', $post->post_content);
+                                echo $content;
+                                ?>
                             </div>
-                            <!--Two Column-->
-                            <div class="two-column">
-                                <?php get_template_part('template-parts/page/content', 'two-column'); ?>
-                            </div>
+                            <?php if ($pagename != 'contacts') { ?>
+                                <!--Two Column-->
+                                <div class="two-column">
+                                    <?php get_template_part('template-parts/page/content', 'two-column'); ?>
+                                </div>
+                            <?php } ?>
                         </section>
                     </div>
+                    <?php if ($pagename == 'contacts') { ?>
+                        <!--Map Section-->
+                        <section class="map-section">
+                            <div class="map-outer">
+
+                                <!--Map Canvas-->
+                                <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6d00f98bdf928616437c22e1afe45d200834b9eff82c53092e7a8c184b53ba1f&amp;source=constructor"
+                                        width="100%" height="520" frameborder="0"></iframe>
+
+                            </div>
+                        </section>
+                    <?php } ?>
                     <!--Content Side-->
                 </div>
             </div>
