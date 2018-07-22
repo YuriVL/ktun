@@ -1,11 +1,3 @@
-AuthType Basic
-AuthName "Super!!!"
-AuthUserFile ../etc/.htpasswd
-Require valid-user
-<Files .htpasswd>
-   deny from all  #запрет доступа из браузера к .htpasswd
-</Files>
-
 # BEGIN WordPress
 <IfModule mod_rewrite.c>
 RewriteEngine On
