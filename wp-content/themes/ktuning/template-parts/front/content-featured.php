@@ -8,6 +8,8 @@ $obj = get_post_type_object( 'featured-services' );
 $features = getServices(4, 'featured-services');
 $h2 = $obj->label ?? '';
 $i = 1;
+$post_about = get_post(7);
+$link = esc_url( apply_filters( 'the_permalink', get_permalink( $post_about ), $post_about ));
 ?>
 
 <div class="auto-container">
@@ -33,7 +35,7 @@ $i = 1;
                 <div class="content padding-800">
                     <h3><?php echo $feature->post_title ?></h3>
                     <p><?php echo $feature->post_content ?></p>
-                    <a class="theme-btn read-more" href="#">Подробнее </span></a>
+                    <a class="theme-btn read-more" href="<?php echo $link;?>">Подробнее </span></a>
                 </div>
             </div>
             <?php
