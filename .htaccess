@@ -1,0 +1,24 @@
+Options +FollowSymLinks -Indexes
+# BEGIN WordPress
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteBase /
+RewriteRule ^index\.php$ - [L]
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule . /index.php [L]
+RewriteCond %{QUERY_STRING} (&lt;|%3C)([^s]*s)+cript.*(&gt;|%3E) [NC,OR]
+RewriteCond %{QUERY_STRING} GLOBALS (=|\[|\%[0-9A-Z]{0,2}) [OR]
+RewriteCond %{QUERY_STRING} _REQUEST (=|\[|\%[0-9A-Z]{0,2})
+RewriteCond %{query_string} concat.*\( [NC,OR]
+RewriteCond %{query_string} union.*select.*\( [NC,OR]
+RewriteCond %{query_string} union.*all.*select [NC]
+RewriteRule ^(.*)$ index.php [F,L]
+SetEnvIf user-agent «Indy Library» stayout=1
+SetEnvIf user-agent «libwww-perl» stayout=1
+SetEnvIf user-agent «Wget» stayout=1
+deny from env=stayout
+RewriteCond %{QUERY_STRING} author=\d
+RewriteRule ^ /? [L,R=301]
+</IfModule>
+# END WordPress
