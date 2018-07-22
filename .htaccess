@@ -17,6 +17,5 @@ SetEnvIf user-agent «Wget» stayout=1
 deny from env=stayout
 RewriteCond %{QUERY_STRING} author=\d
 RewriteRule ^ /? [L,R=301]
-
 </IfModule>
 # END WordPress

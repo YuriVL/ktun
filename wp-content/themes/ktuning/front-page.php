@@ -72,7 +72,7 @@ get_header(); ?>
 
                     <div class="row clearfix">
                         <div class="col-lg-7 co-md-8 col-sm-6 col-xs-12 pull-right">
-                            <div class="form-outer">
+                            <div id="record" class="form-outer">
 
                                 <div class="sec-title">
                                     <h2>запись на диагностику</h2>

@@ -24,4 +24,4 @@
 </nav>
 <!-- Main Menu End-->
 
-<div class="btn-outer"><a href="contact.html" class="appt-btn theme-btn">Запись на диагностику</a></div>
+<div class="btn-outer"><a href="#record" class="appt-btn theme-btn">Запись на диагностику</a></div>

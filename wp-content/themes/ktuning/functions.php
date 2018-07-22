@@ -103,7 +103,7 @@ add_action('customize_register', function ($wp_customize) {
     $wp_customize->add_setting('footer_ok', ['default' => '', 'transport' => 'refresh']);
     $wp_customize->add_setting('footer_skype', ['default' => '', 'transport' => 'refresh']);
     $wp_customize->add_setting('footer_viber', ['default' => '', 'transport' => 'refresh']);
-    $wp_customize->add_setting('copyright', ['default' => 'Copyright &copy; Ktuning.by', 'transport' => 'refresh']);
+    $wp_customize->add_setting('copyright', ['default' => 'Copyright &copy; oktuning.by', 'transport' => 'refresh']);
 
     $wp_customize->add_section('footer_sec', [
         'title' => 'Настройки футера',
@@ -293,7 +293,7 @@ function register_post_types()
     register_post_type('featured-services', array(
         'label' => null,
         'labels' => array(
-            'name' => 'Автосервис Ktuning', // основное название для типа записи
+            'name' => 'Автосервис oktuning', // основное название для типа записи
             'singular_name' => 'Добавить запись', // название для одной записи этого типа
             'add_new' => 'Добавить запись', // для добавления новой записи
             'add_new_item' => 'Добавление записи', // заголовка у вновь создаваемой записи в админ-панели.

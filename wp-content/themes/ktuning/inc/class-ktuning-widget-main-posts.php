@@ -106,7 +106,7 @@ class Ktuning_Widget_Main_Posts extends WP_Widget
                                     <?php endif; ?>
                                     <div class="icon"><span class="fa fa-comment-o"></span>
                                     </div>
-                                    7-комментариев
+                                    <?php echo $recent_post->comment_count?>-комм.
                                 </li>
                                 <li>
                                     <div class="icon"><span class="fa fa-heart-o"></span>
