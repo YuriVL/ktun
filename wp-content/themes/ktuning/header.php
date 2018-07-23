@@ -9,7 +9,7 @@
     <meta name="description" content="Ремонт авто в Могилеве и Могилевской области, диагностика автомобилей всех марок, техническое обслуживание автомобиля.">
     <meta name="keywords" content="Ремонт авто, автомобиль ремонт, автомобиль диагностика, двигатель ремонт, ремонт подвески, ремонт тормоз, ремонт автоэлектрики, чип тюнинг двигателя">
 
-    <title><?php bloginfo('name'); ?> | <?php wp_title(); ?></title>
+    <title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
     <!--Favicon-->
     <link rel="shortcut icon" href="<?php echo IMG_DIR ?>/favicon.ico" type="image/x-icon">
     <link rel="icon" href="<?php echo IMG_DIR ?>/favicon.ico" type="image/x-icon">

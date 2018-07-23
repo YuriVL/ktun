@@ -79,8 +79,7 @@ get_header(); ?>
                     <div class="map-outer">
 
                         <!--Map Canvas-->
-                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6d00f98bdf928616437c22e1afe45d200834b9eff82c53092e7a8c184b53ba1f&amp;source=constructor"
-                                width="100%" height="520" frameborder="0"></iframe>
+                        <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6d00f98bdf928616437c22e1afe45d200834b9eff82c53092e7a8c184b53ba1f&amp;source=constructor" width="100%" height="520" frameborder="0"></iframe>
 
                     </div>
                 </section>
