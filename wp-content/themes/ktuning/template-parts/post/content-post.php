@@ -46,12 +46,13 @@ $link = get_permalink($post->ID);
                 <h3><a href="<?php echo $link; ?>"><?php the_title(); ?></a></h3>
                 <div class="post-meta">
                     <ul class="clearfix">
-                        <li><span class="icon fa fa-heart-o"></span> 40
-                                отметок
-                                «Нравится»
+                        <li>
+                            <span class="icon fa fa-eye"></span>
+                            <?php pvc_post_views($post->Id);?> Просмотров
                         </li>
-                        <li><span class="icon fa fa-comment-o"></span> <?php echo $post->comment_count?>
-                                Комментария
+                        <li>
+                            <span class="icon fa fa-comment-o"></span>
+                            <?php echo $post->comment_count?>  Комментария
                         </li>
                     </ul>
                 </div>

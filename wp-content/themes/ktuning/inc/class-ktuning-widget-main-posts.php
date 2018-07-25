@@ -104,14 +104,16 @@ class Ktuning_Widget_Main_Posts extends WP_Widget
                                 </li>
                                 <li>
                                     <?php endif; ?>
-                                    <div class="icon"><span class="fa fa-comment-o"></span>
+                                    <div class="icon">
+                                        <span class="fa fa-comment-o"></span>
                                     </div>
                                     <?php echo $recent_post->comment_count?>-комм.
                                 </li>
                                 <li>
-                                    <div class="icon"><span class="fa fa-heart-o"></span>
+                                    <div class="icon">
+                                        <span class="fa fa fa-eye"></span>
                                     </div>
-                                    40-Likes
+                                    <?php echo pvc_post_views($recent_post->Id);?>-просм.
                                 </li>
                             </ul>
                         </div>

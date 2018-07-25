@@ -2796,6 +2796,10 @@ ul,li{
 	min-height: 92px;
 }
 
+.post-views.entry-meta {
+	display: inline-block;
+}
+
 /*** 
 
 ====================================================================
