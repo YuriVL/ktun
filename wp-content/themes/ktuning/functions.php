@@ -4,9 +4,9 @@ require get_template_directory() . '/inc/class-inc.php';
 add_filter('show_admin_bar', '__return_false');
 
 define('THEME_ROOT', get_template_directory_uri());
-define('CSS_DIR', THEME_ROOT . '/assets/css');
-define('JS_DIR', THEME_ROOT . '/assets/js');
-define('IMG_DIR', THEME_ROOT . '/assets/images');
+define('CSS_DIR', THEME_ROOT . '/assets/dist/css');
+define('JS_DIR', THEME_ROOT . '/assets/dist/js');
+define('IMG_DIR', THEME_ROOT . '/assets/dist/images');
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.

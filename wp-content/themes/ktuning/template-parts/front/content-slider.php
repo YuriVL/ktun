@@ -23,15 +23,11 @@
                          data-voffset="-30" data-speed="1500" data-start="500" data-easing="easeOutExpo"
                          data-splitin="none" data-splitout="none" data-elementdelay="0.01"
                          data-endelementdelay="0.3" data-endspeed="1200" data-endeasing="Power4.easeIn">
-						<?php if($key == 0){ ?>
-                        <h1><?php echo $slide->post_title ?> 
-							<?php echo $slide->post_excerpt ?> </h1>
-						<?php } else { ?>
-						<h2><?php echo $slide->post_title ?> 
-							<?php echo $slide->post_excerpt ?> </h2>
-						<?php } ?>
+                        <div class="slider-text">
+                            <?php echo $slide->post_title ?>
+							<?php echo $slide->post_excerpt ?>
+                        </div>
                     </div>
-
                     <div class="tp-caption sfr sfb tp-resizeme" data-x="left" data-hoffset="30"
                          data-y="center"
                          data-voffset="110" data-speed="1500" data-start="1000" data-easing="easeOutExpo"

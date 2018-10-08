@@ -14,7 +14,7 @@ $link = esc_url( apply_filters( 'the_permalink', get_permalink( $post_about ), $
 
 <div class="auto-container">
     <div class="sec-title">
-        <h2><?php echo $h2 ?></h2>
+        <h1><?php echo $h2 ?></h1>
     </div>
     <!--Box Container-->
     <div class="container-box anim-5-all">
