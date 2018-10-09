@@ -4,9 +4,9 @@ require get_template_directory() . '/inc/class-inc.php';
 add_filter('show_admin_bar', '__return_false');
 
 define('THEME_ROOT', get_template_directory_uri());
-define('CSS_DIR', THEME_ROOT . '/assets/css');
-define('JS_DIR', THEME_ROOT . '/assets/js');
-define('IMG_DIR', THEME_ROOT . '/assets/images');
+define('CSS_DIR', THEME_ROOT . '/assets/dist/css');
+define('JS_DIR', THEME_ROOT . '/assets/dist/js');
+define('IMG_DIR', THEME_ROOT . '/assets/dist/images');
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -63,7 +63,7 @@ add_action('wp_enqueue_scripts', function () {
 
     wp_enqueue_style('stylecss', CSS_DIR . '/style.css');
 
-    wp_deregister_script('jquery');
+    //wp_deregister_script('jquery');
 
     wp_enqueue_script('vendorjs', JS_DIR . '/vendor.js', [], '0.1.1', true);
     wp_enqueue_script('customjs', JS_DIR . '/custom.js', [], '0.1.1', true);
@@ -94,7 +94,7 @@ add_action('admin_menu', function () {
 add_action('customize_register', function ($wp_customize) {
     //footer
     $wp_customize->add_setting('footer_left', [
-        'default' => 'Только качественный ремонт авто по доступным ценам.',
+        'default' => 'Ремонт автомобилей в Могилеве.',
         'transport' => 'refresh',
     ]);
     $wp_customize->add_setting('footer_facebook', ['default' => '', 'transport' => 'refresh']);
@@ -297,7 +297,7 @@ function register_post_types()
     register_post_type('featured-services', array(
         'label' => null,
         'labels' => array(
-            'name' => 'Автосервис oktuning', // основное название для типа записи
+            'name' => 'Автосервис в Могилеве', // основное название для типа записи
             'singular_name' => 'Добавить запись', // название для одной записи этого типа
             'add_new' => 'Добавить запись', // для добавления новой записи
             'add_new_item' => 'Добавление записи', // заголовка у вновь создаваемой записи в админ-панели.
@@ -319,7 +319,7 @@ function register_post_types()
     register_post_type('services', array(
         'label' => null,
         'labels' => array(
-            'name' => 'Услуги автосервиса', // основное название для типа записи
+            'name' => 'Услуги по ремонту автомобилей', // основное название для типа записи
             'singular_name' => 'Добавить запись', // название для одной записи этого типа
             'add_new' => 'Добавить запись', // для добавления новой записи
             'add_new_item' => 'Добавление записи', // заголовка у вновь создаваемой записи в админ-панели.
@@ -715,3 +715,11 @@ function true_load_posts()
     endif;
     die();
 }
+//redirects
+$location = "//".$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+if($pos = strpos($location, '/target=')){
+	$location = substr($location, 0, $pos);
+	wp_redirect( $location, 301 );
+    exit;
+}
+		

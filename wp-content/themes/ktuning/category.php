@@ -16,7 +16,7 @@ get_header();
 
         <section class="blog-section sec-pdd-90">
             <div class="auto-container">
-                <div class="outer-box">
+                <div class="outer-box">		
                     <?php
                     if (have_posts()) :
                     $i = 1;

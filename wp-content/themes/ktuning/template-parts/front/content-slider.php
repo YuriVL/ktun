@@ -7,7 +7,7 @@
         <ul>
             <?php
             $sliders = getServices(3, 'main-slider');
-            foreach ($sliders as $slide) {
+            foreach ($sliders as $key=>$slide) {
                 $fields = get_fields($slide->ID);
                 $slideImage = get_the_post_thumbnail_url($slide->ID, 'main-slider-thumb');
                 ?>
@@ -23,10 +23,11 @@
                          data-voffset="-30" data-speed="1500" data-start="500" data-easing="easeOutExpo"
                          data-splitin="none" data-splitout="none" data-elementdelay="0.01"
                          data-endelementdelay="0.3" data-endspeed="1200" data-endeasing="Power4.easeIn">
-                        <h2><?php echo $slide->post_title ?><br>
-                        <?php echo $slide->post_excerpt ?> </h2>
+                        <div class="slider-text">
+                            <?php echo $slide->post_title ?>
+							<?php echo $slide->post_excerpt ?>
+                        </div>
                     </div>
-
                     <div class="tp-caption sfr sfb tp-resizeme" data-x="left" data-hoffset="30"
                          data-y="center"
                          data-voffset="110" data-speed="1500" data-start="1000" data-easing="easeOutExpo"
