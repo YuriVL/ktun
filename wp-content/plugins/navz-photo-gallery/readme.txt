@@ -3,16 +3,16 @@ Contributors: navzme
 Tags: acf, advanced, custom, fields, photo, gallery, album, fancybox, litebox, lightbox
 Requires at least: 3.8
 Tested up to: 4.9.6
-Stable tag: 1.6.2
+Stable tag: 1.6.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-A cool plugin that extends the Advanced Custom Fields (ACF) functionality to add ‘Photo Gallery’ to any post/pages of your choice.
+A cool plugin that extends the Advanced Custom Fields (ACF) functionality to add "Photo Gallery" to any post/pages of your choice.
 
 == Description ==
 This plugin is alternative of ACF Gallery Pro. 
 
-We are just a lightweight extension of Advanced Custom Field (ACF) that adds ‘Photo Gallery’ field to any post/pages on your WordPress website.
+A lightweight extension of Advanced Custom Field (ACF) that adds ‘Photo Gallery’ field to any post/pages on your WordPress website.
 
 * Visually create your Fields
 * Add multiple photos and you can also modify title, caption and link to anything
@@ -22,11 +22,16 @@ We are just a lightweight extension of Advanced Custom Field (ACF) that adds ‘
 * Uses the native WordPress metadata for ease of use and fast processing
 
 = Usage =
+acf_photo_gallery is a helper function that will query the database and compile the images for you. The output of this function will be an array.
+
+`acf_photo_gallery('<ACF_FIELD_NAME>', $post->ID);`
+
+= Example =
 The following example is using Twitter Bootstrap framework to layout. You can use any framework of your choice.
 
 `<?php
 	//Get the images ids from the post_metadata
-	$images = acf_photo_gallery('gallery_images', $post->ID);
+	$images = acf_photo_gallery('vacation_photos', $post->ID);
 	//Check if return array has anything in it
 	if( count($images) ):
 		//Cool, we got some data so now let's loop over it
@@ -70,18 +75,34 @@ You can use ACF helper function `get_field`
 
 = Pull caption from attachment caption field =
 By default the caption is being pulled from description field. Add the following filter to your `function.php` to pull the caption from attachment caption field.
+
 `add_filter( 'acf_photo_gallery_caption_from_attachment', '__return_true' );`
+
+= REST API =
+To use the RESTful feature, you will need to install ACF to REST API plugin.
+
+Usage 1
+`http://www.example.com/wp-json/acf/v3/pages/POST_ID/Field_Name?type=photo_gallery`
+
+Example
+`http://www.example.com/wp-json/acf/v3/pages/2/vacation_photos?type=photo_gallery`
+
+Usage 2
+`http://www.example.com/wp-json/acf/v3/pages/POST_ID/Field_Name?type=photo_gallery&order=ASC&orderby=post__in`
+
+Example
+`http://www.example.com/wp-json/acf/v3/pages/2/vacation_photos?type=photo_gallery&order=ASC&orderby=post__in`
+
 
 = Compatibility =
 This ACF field type is compatible with:
 * ACF 4
-* ACF 5 (Coming Soon)
+* ACF 5
 
 = Issues =
-We have tested this plugins amongst the latest version of WordPress and famous themes and plugins. Just like any other WordPress plugin, this plugin can also cause issues with other themes and plugins. If you are facing issues making this plugin work on your WordPress site, please do ask for help in the support forum. This way we can help you out and prevent this issue from happening to someone else.
-If you want to talk to me directly, you can contact me via my website <https://www.navz.me/>
+Just like any other WordPress plugin, this plugin can also cause issues with other themes and plugins. If you are facing issues making this plugin work on your WordPress site, please do ask for help in the support forum. This way we can help you out and prevent this issue from happening to someone else. If you want to talk to me directly, you can contact me via my website <http://www.navz.me/>
 
-== Installation ==
+= Installation =
 
 1. Copy the `navz-photo-gallery` folder into your `wp-content/plugins` folder
 2. Activate the Advanced Custom Fields: Photo Gallery plugin via the plugins admin page
@@ -89,6 +110,12 @@ If you want to talk to me directly, you can contact me via my website <https://w
 4. Please refer to the description for more info regarding the field type settings
 
 == Changelog ==
+=1.6.3=
+* [Added] Support for ACF 5
+* [Added] Edit gallery with built-in or WordPress native model. Thanks to Github @makepost
+* [Added] Under the hood improvements of the codebase
+* [Added] Support for RESTFul API with ACF to REST API plugin
+
 =1.6.2=
 * [Bugfix] Keep data synced with the attachment data
 * [Bugfix] Pull caption attachment caption using add filters

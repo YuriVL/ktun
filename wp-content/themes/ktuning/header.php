@@ -5,11 +5,8 @@
     <meta charset="utf-8">
     <!-- Responsive -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
-    <meta name="description" content="Ремонт авто в Могилеве и Могилевской области, диагностика автомобилей всех марок, техническое обслуживание автомобиля.">
-    <meta name="keywords" content="Ремонт авто, автомобиль ремонт, автомобиль диагностика, двигатель ремонт, ремонт подвески, ремонт тормоз, ремонт автоэлектрики, чип тюнинг двигателя">
-
-    <title><?php bloginfo('name'); ?> | <?php is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
+	<meta name="keywords" content="Ремонт автомобиля, автосервис, диагностика авто, ремонт двигателя, ремонт подвески, ремонт тормозной системы, ремонт авто, Могилев, область">    
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <!--Favicon-->
     <link rel="shortcut icon" href="<?php echo IMG_DIR ?>/favicon.ico" type="image/x-icon">
     <link rel="icon" href="<?php echo IMG_DIR ?>/favicon.ico" type="image/x-icon">

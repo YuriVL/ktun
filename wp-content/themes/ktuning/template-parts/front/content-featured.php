@@ -35,7 +35,7 @@ $link = esc_url( apply_filters( 'the_permalink', get_permalink( $post_about ), $
                 <div class="content padding-800">
                     <h3><?php echo $feature->post_title ?></h3>
                     <p><?php echo $feature->post_content ?></p>
-                    <a class="theme-btn read-more" href="<?php echo $link;?>">Подробнее </span></a>
+                    <a class="theme-btn read-more" href="<?php echo $link;?>">Подробнее</a>
                 </div>
             </div>
             <?php

@@ -64,24 +64,56 @@
                                 <div class="widget-content">
                                     <div class="social-links">
                                         <ul class="clearfix">
+											<?php 
+											$footer_facebook = get_theme_mod('footer_facebook');
+											if(!empty($footer_facebook)){
+											?>
                                             <li>
-                                                <a href="<?php echo get_theme_mod('footer_facebook'); ?>" target="_blank"><span class="icon fa fa-facebook-f"></span> Facebook</a>
+                                                <a href="<?php echo $footer_facebook ?>" target="_blank"><span class="icon fa fa-facebook-f"></span> Facebook</a>
                                             </li>
+											<?php 
+											}
+											$footer_instagram = get_theme_mod('footer_instagram');
+											if(!empty($footer_instagram)){
+											?>
                                             <li>
-                                                <a href="<?php echo get_theme_mod('footer_instagram'); ?>" target="_blank"><span class="icon fa fa-instagram"></span> Instagram</a>
+                                                <a href="<?php echo $footer_instagram; ?>" target="_blank"><span class="icon fa fa-instagram"></span> Instagram</a>
                                             </li>
+											<?php 
+											}
+											$footer_viber = get_theme_mod('footer_viber');
+											if(!empty($footer_viber)){
+											?>
                                             <li>
-                                                <a href="<?php echo get_theme_mod('footer_viber'); ?>"><span class="icon fa fa-whatsapp"></span> Viber</a>
+                                                <a href="<?php echo $footer_viber; ?>"><span class="icon fa fa-whatsapp"></span> Viber</a>
                                             </li>
+											<?php 
+											}
+											$footer_skype = get_theme_mod('footer_skype');
+											if(!empty($footer_skype)){
+											?>
                                             <li>
-                                                <a href="<?php echo get_theme_mod('footer_skype'); ?>"><span class="icon fa fa-skype"></span> Skype</a>
+                                                <a href="<?php echo $footer_skype; ?>"><span class="icon fa fa-skype"></span> Skype</a>
                                             </li>
+											<?php 
+											}
+											$footer_vkontakte = get_theme_mod('footer_vkontakte');
+											if(!empty($footer_vkontakte)){
+											?>
                                             <li>
-                                                <a href="<?php echo get_theme_mod('footer_vkontakte');?> target="_blank"><span class="icon icon fa fa-vk"></span> Vkontakte</a>
+                                                <a href="<?php echo $footer_vkontakte;?>"><span class="icon icon fa fa-vk"></span> Vkontakte</a>
                                             </li>
+											<?php 
+											}
+											$footer_ok = get_theme_mod('footer_ok');
+											if(!empty($footer_ok)){
+											?>
                                             <li>
-                                                <a href="<?php echo get_theme_mod('footer_ok'); ?>" target="_blank"><span class="icon fa fa-odnoklassniki"></span>Ok</a>                                            </li>
-                                            </li>
+                                                <a href="<?php echo $footer_ok; ?>"><span class="icon fa fa-odnoklassniki"></span>Ok</a>                                            
+											</li>
+											<?php 
+											}
+											?>
                                         </ul>
                                     </div>
                                 </div>
