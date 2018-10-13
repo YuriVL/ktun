@@ -448,6 +448,7 @@
 		color:#ffffff;
 		background:#1c1c1c;
 		text-align:left;
+		font-size: 20px;
 	}
 	
 	.main-menu .navbar-collapse > .navigation > li > a:hover,
@@ -689,6 +690,10 @@
 		width:100%;
 		text-align:center;
 		padding:10px;
+		font-size: 20px;
+	}
+	.main-header .info-box .light-text {
+		font-size: 16px;
 	}
 	
 	.main-header .info-box .icon-box{
@@ -852,7 +857,10 @@
 	}
 	
 	.main-header .btn-outer{
-		width:200px;	
+		width:250px;
+	}
+	.main-header .btn-outer .appt-btn {
+		font-size: 16px;
 	}
 	
 	.team-member .inner-box .overlay-box .data{
