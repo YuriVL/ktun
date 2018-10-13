@@ -103,7 +103,7 @@
 body {
 	font-family: 'Lato', sans-serif;
 	font-size:13px;
-	color:#f9f9f9;;
+	color:#f9f9f9;
 	line-height:1.8em;
 	font-weight:400;
 	background-color: rgba(35, 35, 36, 0.9);
@@ -566,7 +566,7 @@ ul,li{
 }
 
 .main-header .info-box .light-text {
-	color: #656565;
+	color: #a83533;
 	font-weight: 500;
 	font-size: 13px;
 }
@@ -5127,7 +5127,9 @@ ul,li{
 	padding: 0 0 2px 17px;
 	background: url(../images/icons/content_li.png) no-repeat 4px 7px;
 }
-
+.content-section .text-block img{
+	width: 100%;
+}
 .services-content .two-column{
 	position:relative;
 	margin-bottom:20px;	
@@ -7451,6 +7453,7 @@ div.wpcf7-mail-sent-ok {
 		color:#ffffff;
 		background:#1c1c1c;
 		text-align:left;
+		font-size: 20px;
 	}
 	
 	.main-menu .navbar-collapse > .navigation > li > a:hover,
@@ -7692,6 +7695,10 @@ div.wpcf7-mail-sent-ok {
 		width:100%;
 		text-align:center;
 		padding:10px;
+		font-size: 20px;
+	}
+	.main-header .info-box .light-text {
+		font-size: 16px;
 	}
 	
 	.main-header .info-box .icon-box{
@@ -7855,7 +7862,10 @@ div.wpcf7-mail-sent-ok {
 	}
 	
 	.main-header .btn-outer{
-		width:200px;	
+		width:250px;
+	}
+	.main-header .btn-outer .appt-btn {
+		font-size: 16px;
 	}
 	
 	.team-member .inner-box .overlay-box .data{
